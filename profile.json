@@ -1,0 +1,60 @@
+{
+    "subscription": null,
+    "purchases": {
+        "programs": [
+            {
+                "programId": "programid",
+                "package": "delux",
+                "progress": {
+                    "completion": 0,
+                    "currentExercise": "exerciseId",
+                    "currentRoutine": "routineId"
+                }
+            }
+        ]
+    },
+
+    "programs": [
+        {
+            "_id": "program id",
+            "title": "12 Week shred program",
+            "duration": "10weeks",
+            "description": "this is an article",
+            "exercises": [
+                {
+                    "_id": "exercise_id1",
+                    "day": 1,
+                    "title": "This is the title for the exercise day",
+                    "description": "This is the description of the days workout",
+                    "routinesCount": 12,
+                    "duration": 3000,
+                    "routines": [
+                        {
+                            "_id": "routine one",
+                            "length": "240s",
+                            "youtubeId": "youtubeid",
+                            "title": "this is the title of the routine",
+                            "description": "this is an article"
+                        }
+                    ]
+                },
+                {
+                    "_id": "exercise_id2",
+                    "day": 2,
+                    "title": "This is the title for the exercise day",
+                    "description": "This is the description of the days workout",
+                    "routinesCount": 8,
+                    "routines": [
+                        {
+                            "_id": "routine one",
+                            "youtubeId": "youtubeid",
+                            "title": "this is the title of the routine",
+                            "description": "this is an article"
+                        }
+                    ]
+                }
+            ],
+            "visitations": "this is the number of visitations that a client has received so far"
+        }
+    ]
+}

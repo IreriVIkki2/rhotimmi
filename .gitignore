@@ -8,6 +8,7 @@
 # testing
 /coverage
 /credentials/
+/functions/sessions/
 
 # next.js
 /.next/

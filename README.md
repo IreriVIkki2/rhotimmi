@@ -1,6 +1,6 @@
-# With Firebase Authentication example
+# Rhotimmi Fitness Website
 
-The goal is to authenticate users with firebase and store their auth token in sessions. A logged in user will see their messages on page load and then be able to post new messages.
+This is a website that facilitates a connection between Rhotimmi (a fitness trainer) and his clients/fans. It allows him to keep his fans updated with everything that is happening with the practice and more importantly it provides a platform where he can sell and manage his fitness programs.
 
 ## How to use
 

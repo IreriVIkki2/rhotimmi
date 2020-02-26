@@ -4,14 +4,22 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const session = require("express-session");
 const FileStore = require("session-file-store")(session);
-const next = require("next");
 const admin = require("firebase-admin");
+const myFirebase = require("firebase/app");
 
 // Create and Deploy Your First Cloud Functions
 // https://firebase.google.com/docs/functions/write-firebase-functions
 
-const firebase = admin.initializeApp(functions.config().firebase);
-const db = admin.firestore();
+const firebase = admin.initializeApp(
+    {
+        credential: admin.credential.cert(require("./credentials/server")),
+        ...require("./credentials/server"),
+    },
+    "server",
+);
+
+// const firebase = admin.initializeApp(functions.config().firebase);
+const db = firebase.firestore();
 
 const app = express();
 const main = express();
@@ -43,8 +51,16 @@ main.use((req, res, next) => {
 main.use("/v1", app);
 
 // test the functions
-app.get("/", (req, res) => {
-    res.send("Hello from Firebase!");
+app.get("/programs/all", (req, res) => {
+    let programs = {};
+    db.collection("programs")
+        .get()
+        .then(snap => {
+            snap.forEach(doc => {
+                programs[doc.id] = doc.data();
+            });
+            res.status(200).json(programs);
+        });
 });
 
 app.post("/login", (req, res) => {
